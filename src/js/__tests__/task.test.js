@@ -1,7 +1,7 @@
 import Validator from '../task';
 
 test('Метод должен правильно валидировать переданное имя и возвращать true', () => {
-  expect(new Validator().validateUsername('Akakiy')).toBeTruthy();
+  expect(new Validator().validateUsername('Ak-ak_i0y')).toBeTruthy();
 });
 
 test('Метод должен создавать свойство username в инстансте класса, с переданным именем, если имя валидно', () => {
