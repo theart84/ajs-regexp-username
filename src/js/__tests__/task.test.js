@@ -4,6 +4,10 @@ test('Метод должен правильно валидировать пер
   expect(new Validator().validateUsername('Ak-ak_i0y')).toBeTruthy();
 });
 
+test('Метод должен правильно валидировать переданное имя и возвращать true, 2 вариант', () => {
+  expect(new Validator().validateUsername('Ak-ak_i000y')).toBeTruthy();
+});
+
 test('Метод должен создавать свойство username в инстансте класса, с переданным именем, если имя валидно', () => {
   const testObj = new Validator();
   testObj.validateUsername('Akakiy');
@@ -44,8 +48,4 @@ test('Метод должен выбросить ошибку если имя с
 
 test('Метод должен выбросить ошибку если имя содержит в конце _', () => {
   expect(() => new Validator().validateUsername('Akakiy_')).toThrow();
-});
-
-test('Метод должен выбросить ошибку если имя содержит более 3 цифр подряд', () => {
-  expect(() => new Validator().validateUsername('Aka444kiy')).toThrow();
 });
