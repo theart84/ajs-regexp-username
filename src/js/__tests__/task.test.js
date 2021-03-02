@@ -18,6 +18,18 @@ test('Метод должен выбросить ошибку если имя с
   expect(() => new Validator().validateUsername('-Akakiy')).toThrow();
 });
 
+test('Метод должен выбросить ошибку если имя содержит в начале #', () => {
+  expect(() => new Validator().validateUsername('#Akakiy')).toThrow();
+});
+
+test('Метод должен выбросить ошибку если имя содержит в начале @', () => {
+  expect(() => new Validator().validateUsername('@Akakiy')).toThrow();
+});
+
+test('Метод должен выбросить ошибку если имя состоит из @@', () => {
+  expect(() => new Validator().validateUsername('@@')).toThrow();
+});
+
 test('Метод должен выбросить ошибку если имя содержит в начале _', () => {
   expect(() => new Validator().validateUsername('_Akakiy')).toThrow();
 });
